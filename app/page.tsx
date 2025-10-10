@@ -4,19 +4,19 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { useState } from "react";
-import {
-  BookOpen,
-  Heart,
-  Users,
-  Award,
-  GraduationCap,
-  Globe,
-  Star,
-  Clock,
-  MapPin,
-  Phone,
-  Mail,
+import { useState, useEffect } from "react";
+import { 
+  BookOpen, 
+  Heart, 
+  Users, 
+  Award, 
+  GraduationCap, 
+  Globe, 
+  Star, 
+  Clock, 
+  MapPin, 
+  Phone, 
+  Mail, 
   Calendar,
   Target,
   Lightbulb,
@@ -28,6 +28,8 @@ import {
   Sparkles,
   CheckCircle,
   X,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
 
 // Define the dark burgundy color
@@ -36,6 +38,56 @@ const burgundy = "#6b1a1a";
 export default function HomePage() {
   const [showSuccessDialog, setShowSuccessDialog] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  // Carousel images data
+  const carouselImages = [
+    {
+      src: "/b1.jpeg",
+      alt: "Students in classroom learning",
+      title: "Quality Education",
+      description: "Nurturing young minds with comprehensive learning programs"
+    },
+    {
+      src: "/b2.jpeg", 
+      alt: "School facilities and campus",
+      title: "Modern Facilities",
+      description: "State-of-the-art infrastructure for holistic development"
+    },
+    {
+      src: "/b3.jpeg",
+      alt: "Students participating in activities",
+      title: "Extracurricular Excellence", 
+      description: "Building character through sports, arts, and community service"
+    },
+    {
+      src: "/b4.jpeg",
+      alt: "School community and events",
+      title: "Community Spirit",
+      description: "Fostering values of compassion, respect, and social responsibility"
+    }
+  ];
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % carouselImages.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + carouselImages.length) % carouselImages.length);
+  };
+
+  const goToSlide = (index: number) => {
+    setCurrentSlide(index);
+  };
+
+  // Auto-play functionality
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % carouselImages.length);
+    }, 5000); // Change slide every 5 seconds
+
+    return () => clearInterval(interval);
+  }, [carouselImages.length]);
 
   const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -97,8 +149,116 @@ export default function HomePage() {
           </div>
         </div>
       )}
+
+      {/* Carousel Banner Section */}
+      <section className="relative w-full h-[70vh] md:h-[80vh] overflow-hidden">
+        <div className="relative w-full h-full">
+          {/* Carousel Images */}
+          <div className="relative w-full h-full">
+            {carouselImages.map((image, index) => (
+              <div
+                key={index}
+                className={`absolute inset-0 transition-opacity duration-1000 ${
+                  index === currentSlide ? "opacity-100" : "opacity-0"
+                }`}
+              >
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-black/50"></div>
+              </div>
+            ))}
+          </div>
+
+          {/* Carousel Content Overlay */}
+          <div className="absolute inset-0 flex items-center justify-center z-10">
+            <div className="text-center text-white px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+              <h2 className="text-4xl md:text-6xl font-bold mb-4 drop-shadow-2xl">
+                {carouselImages[currentSlide].title}
+              </h2>
+              <p className="text-xl md:text-2xl mb-8 drop-shadow-lg max-w-3xl mx-auto">
+                {carouselImages[currentSlide].description}
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button
+                  asChild
+                  size="lg"
+                  className="rounded-full"
+                  style={{
+                    backgroundColor: burgundy,
+                    color: "white",
+                    boxShadow: "0 4px 14px 0 rgba(107,26,26,0.15)",
+                    transition: "all 0.2s",
+                    paddingLeft: "2rem",
+                    paddingRight: "2rem",
+                    paddingTop: "1.25rem",
+                    paddingBottom: "1.25rem",
+                    fontWeight: 600,
+                    fontSize: "1.125rem",
+                  }}
+                >
+                  <Link href="/about">Learn More</Link>
+                </Button>
+                <Button
+                  asChild
+                  size="lg"
+                  variant="outline"
+                  className="rounded-full bg-white/80"
+                  style={{
+                    borderWidth: 2,
+                    borderColor: burgundy,
+                    color: burgundy,
+                    fontWeight: 600,
+                    fontSize: "1.125rem",
+                    paddingLeft: "2rem",
+                    paddingRight: "2rem",
+                    paddingTop: "1.25rem",
+                    paddingBottom: "1.25rem",
+                    transition: "all 0.2s",
+                  }}
+                >
+                  <Link href="/admissions">Admissions</Link>
+                </Button>
+              </div>
+            </div>
+          </div>
+
+          {/* Navigation Arrows */}
+          <button
+            onClick={prevSlide}
+            className="absolute left-4 top-1/2 transform -translate-y-1/2 z-20 bg-white/20 hover:bg-white/30 rounded-full p-3 transition-all duration-200 backdrop-blur-sm"
+            aria-label="Previous slide"
+          >
+          </button>
+          <button
+            onClick={nextSlide}
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 z-20 bg-white/20 hover:bg-white/30 rounded-full p-3 transition-all duration-200 backdrop-blur-sm"
+            aria-label="Next slide"
+          >
+          </button>
+
+          {/* Dots Indicator */}
+          <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-20 flex space-x-2">
+            {carouselImages.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => goToSlide(index)}
+                className={`w-3 h-3 rounded-full transition-all duration-200 ${
+                  index === currentSlide
+                    ? "bg-white scale-125"
+                    : "bg-white/50 hover:bg-white/75"
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Hero Section */}
-      <section className="relative min-h-screen py-24 md:py-40 bg-gradient-to-br from-blue-100 via-white to-emerald-100 overflow-hidden">
+      {/* <section className="relative min-h-screen py-24 md:py-40 bg-gradient-to-br from-blue-100 via-white to-emerald-100 overflow-hidden">
         <img
           src="https://images.pexels.com/photos/764681/pexels-photo-764681.jpeg"
           alt="School background"
@@ -194,7 +354,7 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Mission & Vision Section */}
       <section className="py-16 md:py-24 bg-white">
