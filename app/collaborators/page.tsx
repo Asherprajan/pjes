@@ -43,7 +43,6 @@ export default function CollaboratorsPage() {
                       <GraduationCap className="h-12 w-12" style={{ color: burgundy }} />
                     </div>
                   </div>
-
                   <div className="flex-1">
                     <h2
                       className="text-3xl font-bold mb-6"
@@ -51,78 +50,55 @@ export default function CollaboratorsPage() {
                     >
                       Genesis Education System
                     </h2>
-
                     <p className="text-muted-foreground leading-relaxed mb-6">
-                      Genesis Education System is a renowned educational framework that emphasizes holistic development
-                      and innovative teaching methodologies. Through our partnership, we have integrated their proven
-                      curriculum and pedagogical approaches into our teaching practices.
+                      PJES is proud to collaborate with the Genesis Education System, a transformative approach to learning that blends the timeless wisdom of the Gurukul model with modern insights into child development.
                     </p>
-
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-                      <div className="flex items-start gap-3">
-                        <div
-                          className="w-2 h-2 rounded-full mt-2 flex-shrink-0"
-                          style={{ backgroundColor: burgundy }}
-                        ></div>
-                        <div>
-                          <h4 className="font-semibold mb-1" style={{ color: burgundy }}>
-                            Curriculum Development
-                          </h4>
-                          <p className="text-sm text-muted-foreground">
-                            Comprehensive learning frameworks aligned with modern educational standards
-                          </p>
-                        </div>
-                      </div>
-
-                      <div className="flex items-start gap-3">
-                        <div
-                          className="w-2 h-2 rounded-full mt-2 flex-shrink-0"
-                          style={{ backgroundColor: burgundy }}
-                        ></div>
-                        <div>
-                          <h4 className="font-semibold mb-1" style={{ color: burgundy }}>
-                            Teacher Training
-                          </h4>
-                          <p className="text-sm text-muted-foreground">
-                            Regular professional development programs for our faculty
-                          </p>
-                        </div>
-                      </div>
-
-                      <div className="flex items-start gap-3">
-                        <div
-                          className="w-2 h-2 rounded-full mt-2 flex-shrink-0"
-                          style={{ backgroundColor: burgundy }}
-                        ></div>
-                        <div>
-                          <h4 className="font-semibold mb-1" style={{ color: burgundy }}>
-                            Assessment Tools
-                          </h4>
-                          <p className="text-sm text-muted-foreground">
-                            Advanced evaluation methods to track student progress
-                          </p>
-                        </div>
-                      </div>
-
-                      <div className="flex items-start gap-3">
-                        <div
-                          className="w-2 h-2 rounded-full mt-2 flex-shrink-0"
-                          style={{ backgroundColor: burgundy }}
-                        ></div>
-                        <div>
-                          <h4 className="font-semibold mb-1" style={{ color: burgundy }}>
-                            Learning Resources
-                          </h4>
-                          <p className="text-sm text-muted-foreground">
-                            Access to extensive educational materials and digital content
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-
+                    <ul className="space-y-4 text-muted-foreground mb-6 list-none pl-0">
+                      <li className="flex items-start gap-3">
+                        <span className="font-bold" style={{ color: burgundy, marginTop: 4 }}>•</span>
+                        <span>
+                          In Genesis, there are no teachers—only mentors. Adults guide, encourage, and walk beside the child, rather than simply instructing from above.
+                        </span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <span className="font-bold" style={{ color: burgundy, marginTop: 4 }}>•</span>
+                        <span>
+                          Inspired by the Gurukul tradition, learning is personal, holistic, and rooted in real life.
+                        </span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <span className="font-bold" style={{ color: burgundy, marginTop: 4 }}>•</span>
+                        <span>
+                          Each child begins their journey with a mind map, created with mentors and families. This allows every child to be mentored in the way that best suits their unique strengths, challenges, and learning style.
+                        </span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <span className="font-bold" style={{ color: burgundy, marginTop: 4 }}>•</span>
+                        <span>
+                          Education is personalized—not one-size-fits-all. Every child’s learning path is designed individually.
+                        </span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <span className="font-bold" style={{ color: burgundy, marginTop: 4 }}>•</span>
+                        <span>
+                          Parent-centered homework ensures that families are deeply involved in the child’s learning process. Homework becomes a time of bonding, reflection, and discovery rather than pressure.
+                        </span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <span className="font-bold" style={{ color: burgundy, marginTop: 4 }}>•</span>
+                        <span>
+                          The focus is on creating a nurturing learning environment where children feel safe, inspired, and free to explore.
+                        </span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <span className="font-bold" style={{ color: burgundy, marginTop: 4 }}>•</span>
+                        <span>
+                          Genesis emphasizes relationships, creativity, and character-building as much as academics. Children are encouraged to think deeply, ask questions, and grow into balanced, confident individuals.
+                        </span>
+                      </li>
+                    </ul>
                     <p className="text-muted-foreground leading-relaxed">
-                      This collaboration ensures that our students receive education that is not only academically
-                      rigorous but also prepares them for the challenges of the 21st century.
+                      At its heart, Genesis believes that every child learns best when they are truly seen, understood, and nurtured in close partnership with their parents.
                     </p>
                   </div>
                 </div>
@@ -146,7 +122,6 @@ export default function CollaboratorsPage() {
                       <Building2 className="h-12 w-12" style={{ color: burgundy }} />
                     </div>
                   </div>
-
                   <div className="flex-1">
                     <h2
                       className="text-3xl font-bold mb-6"
@@ -154,79 +129,8 @@ export default function CollaboratorsPage() {
                     >
                       SPSK EduTech
                     </h2>
-
-                    <p className="text-muted-foreground leading-relaxed mb-6">
-                      SPSK EduTech is at the forefront of educational technology, providing innovative digital solutions
-                      that enhance the learning experience. Our partnership brings cutting-edge technology into our
-                      classrooms, making education more engaging and accessible.
-                    </p>
-
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-                      <div className="flex items-start gap-3">
-                        <div
-                          className="w-2 h-2 rounded-full mt-2 flex-shrink-0"
-                          style={{ backgroundColor: burgundy }}
-                        ></div>
-                        <div>
-                          <h4 className="font-semibold mb-1" style={{ color: burgundy }}>
-                            Digital Learning Platforms
-                          </h4>
-                          <p className="text-sm text-muted-foreground">
-                            Interactive online tools and educational software
-                          </p>
-                        </div>
-                      </div>
-
-                      <div className="flex items-start gap-3">
-                        <div
-                          className="w-2 h-2 rounded-full mt-2 flex-shrink-0"
-                          style={{ backgroundColor: burgundy }}
-                        ></div>
-                        <div>
-                          <h4 className="font-semibold mb-1" style={{ color: burgundy }}>
-                            Smart Classrooms
-                          </h4>
-                          <p className="text-sm text-muted-foreground">
-                            Technology-enabled learning environments with multimedia resources
-                          </p>
-                        </div>
-                      </div>
-
-                      <div className="flex items-start gap-3">
-                        <div
-                          className="w-2 h-2 rounded-full mt-2 flex-shrink-0"
-                          style={{ backgroundColor: burgundy }}
-                        ></div>
-                        <div>
-                          <h4 className="font-semibold mb-1" style={{ color: burgundy }}>
-                            E-Learning Content
-                          </h4>
-                          <p className="text-sm text-muted-foreground">
-                            Rich multimedia educational content across all subjects
-                          </p>
-                        </div>
-                      </div>
-
-                      <div className="flex items-start gap-3">
-                        <div
-                          className="w-2 h-2 rounded-full mt-2 flex-shrink-0"
-                          style={{ backgroundColor: burgundy }}
-                        ></div>
-                        <div>
-                          <h4 className="font-semibold mb-1" style={{ color: burgundy }}>
-                            Technical Support
-                          </h4>
-                          <p className="text-sm text-muted-foreground">
-                            Ongoing infrastructure and technology maintenance
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-
                     <p className="text-muted-foreground leading-relaxed">
-                      Through SPSK EduTech, we are able to provide our students with modern learning tools that prepare
-                      them for a technology-driven future while maintaining the personal touch that makes education
-                      meaningful.
+                      PJES also partners with SPSK, an organization committed to supporting parents and children with mental health services, resources, training, and expertise that strengthen academic and extracurricular programs.
                     </p>
                   </div>
                 </div>

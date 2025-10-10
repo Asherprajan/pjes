@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card"
 import { Target, Eye, BookOpen, Users, Heart, Lightbulb } from "lucide-react"
+import Image from "next/image"
 
 const burgundy = "#800020"
 const accentBg = "#f3e6e6"
@@ -248,17 +249,31 @@ export default function AboutPage() {
               className="border-2 transition-all hover:shadow-lg"
               style={{ borderColor: burgundy, background: accentBg }}
             >
-              <CardContent className="pt-8 pb-8">
+              <CardContent className="pt-8 pb-8 flex flex-col items-center">
+                <Image
+                  src="/principal.png"
+                  alt="Mrs. Priya Darshini, Principal"
+                  className="w-40 h-50 object-cover mb-5 border-4 rounded - xl"  
+                  style={{ borderColor: burgundy, borderStyle: 'solid' }}
+                  width={112}
+                  height={112}
+                />
                 <h3 className="text-2xl font-semibold mb-4" style={{ color: burgundy }}>
                   Principal's Desk
                 </h3>
-                <p className="text-muted-foreground leading-relaxed italic mb-4">
-                  "Education is not just about academic achievement; it's about shaping character, building confidence,
-                  and nurturing compassion. At PJES, we strive to create an environment where every child feels valued
-                  and empowered to reach their full potential."
+                <p className="text-muted-foreground leading-relaxed italic mb-4 text-center">
+                  At Prema Jyothi English School, my deepest conviction is that education must prepare children not only to excel in examinations but also to thrive in life. Academic rigor gives them the discipline to think critically and achieve high standards, but it must always be balanced with the nurturing of life skills and values that shape confident, resilient, and empathetic human beings.
+                  <br /><br />
+                  In every classroom, in every activity, we aim to create opportunities for students to learn how to work as a team, to communicate with clarity, to manage challenges, and to celebrate diversity. These skills, woven into their daily learning experiences, ensure that they are ready not only for higher studies but also for the larger world that awaits them.
+                  <br /><br />
+                  Equally important to us is fostering a sense of community orientation. We encourage our students to look beyond themselves toward their peers, families, and society at large. Through service activities, group projects, and value-driven programs, they discover the joy of contributing and the responsibility of caring.
+                  <br /><br />
+                  Education, to me, is most meaningful when a child leaves school with not just knowledge, but with wisdom, compassion, and the confidence to make a difference. This is the vision we work toward every single day at Prema Jyothi English School.
                 </p>
-                <p className="font-medium" style={{ color: burgundy }}>
-                  — Principal, Prema Jyothi English School
+                <p className="font-medium text-center" style={{ color: burgundy }}>
+                  — Mrs. Priya Darshini<br />
+                  Principal<br />
+                  Prema Jyothi English School
                 </p>
               </CardContent>
             </Card>
@@ -267,17 +282,30 @@ export default function AboutPage() {
               className="border-2 transition-all hover:shadow-lg"
               style={{ borderColor: burgundy, background: "#ffe5b4" }}
             >
-              <CardContent className="pt-8 pb-8">
+              <CardContent className="pt-8 pb-8 flex flex-col items-center">
+                <Image  
+                  src="/chairman.png"  
+                  alt="Chairman, Prema Jyothi English School"
+                  className="w-40 h-50 object-cover mb-5 border-4 rounded-xl"
+                  style={{ borderColor: burgundy, borderStyle: 'solid' }}
+                  width={112}
+                  height={112}
+                />    
                 <h3 className="text-2xl font-semibold mb-4" style={{ color: burgundy }}>
                   Chairman's Desk
                 </h3>
-                <p className="text-muted-foreground leading-relaxed italic mb-4">
-                  "Our vision has always been to make quality education accessible to all. Through our outreach programs
-                  and partnerships, we are committed to breaking down barriers and creating opportunities for children
-                  from all backgrounds to succeed."
+                <p className="text-muted-foreground leading-relaxed italic mb-4 text-center">
+                  At Prema Jyothi English School, we believe that true education goes beyond the acquisition of knowledge and skills. It is about nurturing young minds and shaping character so that every child develops into a responsible, compassionate, and purposeful individual.
+                  <br /><br />
+                  In today’s rapidly changing world, academic excellence alone is not enough. The strength of a person lies in their moral compass—the inner guide that helps them distinguish right from wrong and inspires them to act with integrity. Alongside intellectual growth, we are deeply committed to cultivating pro-social behavior in our students: kindness, respect, empathy, cooperation, and a sense of service to others.
+                  <br /><br />
+                  We see education as the foundation for building not just successful careers, but meaningful lives. When children learn to care for others, to stand for what is just, and to contribute positively to their communities, they grow into citizens who uplift society as a whole.
+                  <br /><br />
+                  At Prema Jyothi, we work hand in hand with parents to ensure that every child is mentored in an environment that values ethics, inclusivity, and responsibility. Our vision is to create individuals who carry the light of knowledge in their minds and the warmth of goodness in their hearts.
                 </p>
-                <p className="font-medium" style={{ color: burgundy }}>
-                  — Chairman, Prema Jyothi English School
+                <p className="font-medium text-center" style={{ color: burgundy }}>
+                  — Chairman<br />
+                  Prema Jyothi English School
                 </p>
               </CardContent>
             </Card>

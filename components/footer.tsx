@@ -84,7 +84,7 @@ export function Footer() {
                 >
                   <MapPin className="h-5 w-5" style={{ color: burgundy }} />
                 </span>
-                <span>Prema Jyothi English School, Karnataka, India</span>
+                <span>Kothamangala Post, Mulbagal Taluk, Pin - 563127</span>
               </div>
               <div className="flex items-center gap-2 text-base text-muted-foreground">
                 <span
@@ -93,7 +93,7 @@ export function Footer() {
                 >
                   <Phone className="h-5 w-5" style={{ color: burgundy }} />
                 </span>
-                <span>+91 XXXXX XXXXX</span>
+                <span>+91 9448310988, 83108-85539  </span>   
               </div>
               <div className="flex items-center gap-2 text-base text-muted-foreground">
                 <span
@@ -102,7 +102,7 @@ export function Footer() {
                 >
                   <Mail className="h-5 w-5" style={{ color: burgundy }} />
                 </span>
-                <span>info@pjes.edu.in</span>
+                <span>premajyothischoolkolar@gmail.com</span>
               </div>
             </div>
           </div>

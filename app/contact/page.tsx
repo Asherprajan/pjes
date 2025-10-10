@@ -6,7 +6,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { MapPin, Phone, Mail } from "lucide-react"
+import { MapPin, Phone, Mail, CheckCircle } from "lucide-react"
 import { useState } from "react"
 
 const burgundy = "#800020"
@@ -19,17 +19,54 @@ export default function ContactPage() {
     phone: "",
     message: "",
   })
+  const [showSuccessDialog, setShowSuccessDialog] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission
-    console.log("Form submitted:", formData)
-    alert("Thank you for contacting us! We will get back to you soon.")
-    setFormData({ name: "", email: "", phone: "", message: "" })
+    setIsSubmitting(true)
+    
+    try {
+      // Simulate form submission - replace with actual API call
+      await new Promise(resolve => setTimeout(resolve, 1000))
+      
+      setShowSuccessDialog(true)
+      setFormData({ name: "", email: "", phone: "", message: "" })
+    } catch (error) {
+      alert('There was an error submitting the form. Please try again.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
     <div>
+      {/* Success Dialog */}
+      {showSuccessDialog && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-lg p-8 max-w-md w-full mx-4 shadow-2xl">
+            <div className="flex items-center justify-center mb-4">
+              <div className="w-16 h-16 rounded-full flex items-center justify-center" style={{ backgroundColor: "#f0f9ff" }}>
+                <CheckCircle className="h-8 w-8" style={{ color: "#10b981" }} />
+              </div>
+            </div>
+            <h3 className="text-2xl font-bold text-center mb-2" style={{ color: burgundy }}>
+              Message Sent Successfully!
+            </h3>
+            <p className="text-gray-600 text-center mb-6">
+              Thank you for contacting us. We have received your message and will get back to you within 24 hours.
+            </p>
+            <Button
+              onClick={() => setShowSuccessDialog(false)}
+              className="w-full rounded-lg font-semibold"
+              style={{ backgroundColor: burgundy, color: "white" }}
+            >
+              Close
+            </Button>
+          </div>
+        </div>
+      )}
+      
       <section
         className="py-16 md:py-24"
         style={{
@@ -73,9 +110,9 @@ export default function ContactPage() {
                       <div>
                         <h3 className="font-semibold mb-2" style={{ color: burgundy }}>Address</h3>
                         <p className="text-muted-foreground leading-relaxed">
-                          Prema Jyothi English School
+                          Kothamangala Post, Mulbagal Taluk
                           <br />
-                          Karnataka, India
+                          Pin - 563127
                         </p>
                       </div>
                     </div>
@@ -93,7 +130,7 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <h3 className="font-semibold mb-2" style={{ color: burgundy }}>Phone</h3>
-                        <p className="text-muted-foreground">+91 XXXXX XXXXX</p>
+                        <p className="text-muted-foreground">+91 9448310988, 83108-85539</p>
                       </div>
                     </div>
                   </CardContent>
@@ -110,7 +147,7 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <h3 className="font-semibold mb-2" style={{ color: burgundy }}>Email</h3>
-                        <p className="text-muted-foreground">info@pjes.edu.in</p>
+                        <p className="text-muted-foreground">premajyothischoolkolar@gmail.com</p> 
                       </div>
                     </div>
                   </CardContent>
@@ -123,7 +160,7 @@ export default function ContactPage() {
                 style={{ borderColor: burgundy }}
               >
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248849.84916296526!2d77.6309395!3d12.9539974!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1670c9b44e6d%3A0xf8dfc3e8517e4fe0!2sBengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1234567890"
+                  src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3885.1717987377615!2d78.344233!3d13.151560999999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTPCsDA5JzA1LjYiTiA3OMKwMjAnMzkuMiJF!5e0!3m2!1sen!2sin!4v1760094779501!5m2!1sen!2sin"
                   width="100%"
                   height="300"
                   style={{ border: 0 }}
@@ -143,94 +180,81 @@ export default function ContactPage() {
               >
                 Send Us a Message
               </h2>
-
+              
               <Card className="border-2" style={{ borderColor: burgundy }}>
                 <CardContent className="pt-8 pb-8">
-                  <form onSubmit={handleSubmit} className="space-y-6">
+                  <form
+                    method="POST"
+                    action="https://script.google.com/macros/s/AKfycbw5r6xYbjY-YxE_YD8OqFjUfZcW9Jt02kXm4uvonuruWY2QR-e8ZOJesGN3eTgknOsa7A/exec"
+                    className="space-y-5"
+                  >
                     <div>
                       <label
-                        htmlFor="name"
-                        className="block text-sm font-medium mb-2"
+                        className="block text-sm font-semibold mb-2"
                         style={{ color: burgundy }}
                       >
-                        Full Name *
+                        Name
                       </label>
-                      <Input
-                        id="name"
+                      <input
                         type="text"
+                        name="name"
+                        className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-200"
+                        style={{ borderColor: burgundy }}
+                        placeholder="Your full name"
                         required
-                        value={formData.name}
-                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        placeholder="Enter your full name"
-                        className="w-full"
                       />
                     </div>
-
                     <div>
                       <label
-                        htmlFor="email"
-                        className="block text-sm font-medium mb-2"
+                        className="block text-sm font-semibold mb-2"
                         style={{ color: burgundy }}
                       >
-                        Email Address *
+                        Email
                       </label>
-                      <Input
-                        id="email"
+                      <input
                         type="email"
+                        name="email"
+                        className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-200"
+                        style={{ borderColor: burgundy }}
+                        placeholder="your.email@gmail.com"
                         required
-                        value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        placeholder="your.email@example.com"
-                        className="w-full"
                       />
                     </div>
-
                     <div>
                       <label
-                        htmlFor="phone"
-                        className="block text-sm font-medium mb-2"
+                        className="block text-sm font-semibold mb-2"
                         style={{ color: burgundy }}
                       >
-                        Phone Number
+                        Phone
                       </label>
-                      <Input
-                        id="phone"
+                      <input
                         type="tel"
-                        value={formData.phone}
-                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        placeholder="+91 XXXXX XXXXX"
-                        className="w-full"
+                        name="phone"
+                        className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-200"
+                        style={{ borderColor: burgundy }}
+                        placeholder="+91 9448310988"
+                        required
                       />
                     </div>
-
                     <div>
                       <label
-                        htmlFor="message"
-                        className="block text-sm font-medium mb-2"
+                        className="block text-sm font-semibold mb-2"
                         style={{ color: burgundy }}
                       >
-                        Message *
+                        Message
                       </label>
-                      <Textarea
-                        id="message"
+                      <textarea
+                        name="message"
+                        className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-200 h-28 resize-none"
+                        style={{ borderColor: burgundy }}
+                        placeholder="How can we help you?"
                         required
-                        value={formData.message}
-                        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                        placeholder="Tell us how we can help you..."
-                        className="w-full min-h-[150px]"
-                      />
+                      ></textarea>
                     </div>
-
                     <Button
                       type="submit"
-                      size="lg"
-                      className="w-full rounded-full"
-                      style={{
-                        backgroundColor: burgundy,
-                        color: "#fff",
-                        fontWeight: 600,
-                        transition: "all 0.2s",
-                      }}
+                      className="w-full rounded-lg font-semibold text-lg py-2"
+                      style={{ backgroundColor: burgundy, color: "white" }}
                     >
                       Send Message
                     </Button>

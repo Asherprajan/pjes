@@ -16,6 +16,7 @@ const navLinks = [
   { href: "/about", label: "About Us" },
   { href: "/collaborators", label: "Our Collaborators" },
   { href: "/admissions", label: "Admissions" },
+  { href: "/gallery", label: "Photo Gallery" }, 
   { href: "/contact", label: "Contact Us" },
 ]
 
@@ -46,7 +47,7 @@ export function Navigation() {
               />
             </span>
             <div
-              className="text-2xl md:text-3xl font-extrabold tracking-tight"
+              className="text-xl md:text-1xl -extrabold   tracking-tight"
               style={{ color: burgundy }}
             >
               Prema Jyothi English School
