@@ -129,9 +129,22 @@ export default function CollaboratorsPage() {
                     >
                       SPSK EduTech
                     </h2>
-                    <p className="text-muted-foreground leading-relaxed">
+                    <p className="text-muted-foreground leading-relaxed mb-4">
                       PJES also partners with SPSK, an organization committed to supporting parents and children with mental health services, resources, training, and expertise that strengthen academic and extracurricular programs.
                     </p>
+                    <a
+                      href="https://spskedu.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block mt-2 px-6 py-2 rounded-lg font-semibold text-white"
+                      style={{
+                        backgroundColor: burgundy,
+                        transition: "background 0.2s",
+                        textDecoration: "none",
+                      }}
+                    >
+                      Know More
+                    </a>
                   </div>
                 </div>
               </CardContent>

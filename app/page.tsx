@@ -1260,7 +1260,12 @@ export default function HomePage() {
                 >
                   Visit Us
                 </h3>
+               
                 <p className="text-muted-foreground mb-1">
+                   <p>
+                  Jammanahalli Village
+
+                </p>
                   Kothamangala Post, Mulbagal Taluk
                   <br />
                   Pin - 563127

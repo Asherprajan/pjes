@@ -84,7 +84,8 @@ export function Footer() {
                 >
                   <MapPin className="h-5 w-5" style={{ color: burgundy }} />
                 </span>
-                <span>Kothamangala Post, Mulbagal Taluk, Pin - 563127</span>
+                
+                <span>Jammanahalli Village, Kothamangala Post, Mulbagal Taluk, Pin - 563127</span>
               </div>
               <div className="flex items-center gap-2 text-base text-muted-foreground">
                 <span
