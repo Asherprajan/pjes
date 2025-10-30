@@ -4,10 +4,13 @@ const burgundy = "#800020"
 const accentBg = "#f3e6e6"
 
 // Example static image data - you can easily swap for dynamic later
-const galleryImages = Array.from({ length: 51 }, (_, idx) => ({
-  src: `/${idx + 1}.jpeg`,
-  alt: `Gallery Image ${idx + 1}`,
-}));
+const galleryImages = Array.from({ length: 50 }, (_, idx) => idx + 4)
+  .filter(num => num !== 5)
+  .map(num => ({
+    src: `/${num}.jpeg`,
+    alt: `Gallery Image ${num}`,
+  }));
+
 
 export default function GalleryPage() {
   return (
