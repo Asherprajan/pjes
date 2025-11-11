@@ -3,14 +3,16 @@ import Image from "next/image"
 const burgundy = "#800020"
 const accentBg = "#f3e6e6"
 
+// List of numbers corresponding to missing images
+const missingNumbers = [8,9,10,11,12,16,17,19,22,24,29,34,35,42,46,20];
+
 // Example static image data - you can easily swap for dynamic later
 const galleryImages = Array.from({ length: 50 }, (_, idx) => idx + 3)
-  .filter(num => num !== 5)
+  .filter(num => num !== 5 && !missingNumbers.includes(num))
   .map(num => ({
     src: `/${num}.jpeg`,
     alt: `Gallery Image ${num}`,
   }));
-
 
 export default function GalleryPage() {
   return (
