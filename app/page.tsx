@@ -1261,19 +1261,17 @@ export default function HomePage() {
                   Visit Us
                 </h3>
                
-                <p className="text-muted-foreground mb-1">
-                   <p>
-                  Jammanahalli Village
-
-                </p>
-                  Kothamangala Post, Mulbagal Taluk
+                  <p className="text-muted-foreground mb-1">
+                  Jammanahalli Village,
                   <br />
-                  Pin - 563127
+                  Kothamangala Post, Mulbagal Taluk,
+                  <br />
+                  Kolar, Karnataka, 563127
                 </p>
                 <p className="text-xs text-muted-foreground">
                   Mon - Fri: 8:00 AM - 5:00 PM
                 </p>
-              </CardContent>
+              </CardContent>  
             </Card>
             <Card
               className="border-2 shadow-none hover:shadow-xl transition-all"

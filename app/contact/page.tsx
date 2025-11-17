@@ -110,9 +110,9 @@ export default function ContactPage() {
                       <div>
                         <h3 className="font-semibold mb-2" style={{ color: burgundy }}>Address</h3>
                         <p className="text-muted-foreground leading-relaxed">
-                             Jammanahalli   Kothamangala Post, Mulbagal Taluk
-                          <br />
-                          Pin - 563127
+                             Jammanahalli Village, <br />
+                             Kothamangala Post, Mulbagal Taluk, <br />
+                             Kolar, Karnataka, 563127 <br />      
                         </p>
                       </div>
                     </div>
