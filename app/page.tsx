@@ -901,7 +901,7 @@ export default function HomePage() {
       </section>
 
       {/* Photo Gallery Section */}
-      <section className="py-16 md:py-24 bg-white">
+      {/* <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2
@@ -941,7 +941,7 @@ export default function HomePage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Achievements Section */}
       {/* <section className="py-16 md:py-24 bg-gray-50">
