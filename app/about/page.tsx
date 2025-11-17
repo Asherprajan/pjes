@@ -270,11 +270,20 @@ export default function AboutPage() {
                   <br /><br />
                   Education, to me, is most meaningful when a child leaves school with not just knowledge, but with wisdom, compassion, and the confidence to make a difference. This is the vision we work toward every single day at Prema Jyothi English School.
                 </p>
-                <p className="font-medium text-center" style={{ color: burgundy }}>
-                  — Mrs. Priya Darshini<br />
-                  Principal<br />
-                  Prema Jyothi English School
-                </p>
+                <div className="text-center mt-2">
+                  <span className="block font-medium" style={{ color: burgundy }}>
+                    — Mrs. Priya Darshini
+                  </span>
+                  <span className="block text-sm text-muted-foreground mb-1">
+                    <span className="font-semibold"> M.Com, MBA, M.Phil, LLB</span>
+                  </span>
+                  <span className="block font-medium" style={{ color: burgundy }}>
+                    Principal
+                  </span>
+                  <span className="block text-sm text-muted-foreground">
+                    Prema Jyothi English School
+                  </span>
+                </div>
               </CardContent>
             </Card>
 
@@ -303,10 +312,20 @@ export default function AboutPage() {
                   <br /><br />
                   At Prema Jyothi, we work hand in hand with parents to ensure that every child is mentored in an environment that values ethics, inclusivity, and responsibility. Our vision is to create individuals who carry the light of knowledge in their minds and the warmth of goodness in their hearts.
                 </p>
-                <p className="font-medium text-center" style={{ color: burgundy }}>
-                  — Chairman<br />
-                  Prema Jyothi English School
-                </p>
+                <div className="text-center mt-2">
+                  <span className="block font-medium" style={{ color: burgundy }}>
+                    — Mr. Venunathan P.
+                  </span>
+                  <span className="block text-sm text-muted-foreground mb-1">
+                    <span className="font-semibold"> M.Com, M.Div.</span>
+                  </span>
+                  <span className="block font-medium" style={{ color: burgundy }}>
+                    Chairman
+                  </span>
+                  <span className="block text-sm text-muted-foreground">
+                    Prema Jyothi English School
+                  </span>
+                </div>
               </CardContent>
             </Card>
           </div>
